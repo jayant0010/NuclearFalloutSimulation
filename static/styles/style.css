@@ -1,0 +1,66 @@
+#bgVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#indexPageContent {
+    color: white;
+    height: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#indexPageContent h2 {
+    font-family: Martel;
+    line-height: 1.6;
+    text-align: center;
+}
+
+#submitButton {
+    margin: 0;
+    color: #fff;
+    background: #16a085;
+    border: none;
+    width: 70%;
+    height: 40px;
+    margin-top: -20px;
+    margin-left: 15%;
+    border-radius: 4px;
+    border-bottom: 4px solid #117A60;
+    transition: all .2s ease;
+    outline: none;
+}
+
+#submitButton:hover {
+    background: #149174;
+    color: #0C5645;
+}
+
+#submitButton:active {
+    border: 0;
+}
+
+#locateMe,
+#locateMe:hover {
+    background-color: white;
+    padding: 5px 10px 5px 10px;
+    border-left: 0px;
+    box-shadow: none;
+}
+
+#startInputText,
+#startInputText:focus {
+    height: 50px;
+    border-color: #6c757d;
+    box-shadow: none;
+    border-right: 0px;
+}
