@@ -1,0 +1,111 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Nuclear Fallout Radiation Prediction</title>
+
+    <!-- INDEX CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+
+    <!-- MARTEL FONT -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Martel&display=swap">
+
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- GOOGLE LIBRARY JS -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"> </script>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- GIJGO DATEPICKER -->
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body onload="setDate()">
+
+    <!-- GOOGLE MAP API -->
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqpHfAhTZPkSXc3Bs6dskNBv-GXIVOa2I&libraries=places">
+    </script>
+
+    <!-- INDEX BACKGROUND -->
+    <video autoplay muted loop id="bgVideo">
+        <source src="{{url_for('static', filename='videos/index.mp4')}}" type="video/mp4">
+    </video>
+
+    <div id="indexPageContent">
+
+        <h1>Experience the power of a nuclear blast in your area</h1>
+
+        <div style="height: 4%;"></div>
+
+        <!-- INPUT FORM -->
+        <form action="/" method="post">
+
+            <div class="input-group mb-3" style="width: 100%;">
+
+                <!-- LOCATION INPUT -->
+                <input id="startInputText" name="inputLoc" type="text" placeholder="Enter the location"
+                    class="form-control" aria-label="Text input with dropdown button"></input>
+
+                <input type="hidden" name="locLat" value="" id="lat">
+                <input type="hidden" name="locLng" value="" id="lng">
+
+                <!-- GET CURRENT GEOLOCATION -->
+                <div class="input-group-append">
+
+                    <button id="locateMe" class="btn btn-secondary" type="button" data-toggle="tooltip"
+                        data-placement="bottom" title="Locate Me" onclick="getLocation()">
+                        <img src="../static/images/locateMe.png">
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- DATE PICKER -->
+            <div style="background-color: white; padding: 0; margin: 0;">
+                <input id="datepicker" width="100%" name="dateInput" />
+            </div>
+
+            <p style="padding:10px;"></p>
+
+            <button type="submit" id="submitButton">Submit</button>
+
+        </form>
+
+        <div style="height: 4%;"></div>
+
+        <!-- SIMULATION VIDEO -->
+        <embed type="video/mp4"
+            style="width: 140%; height: 90%; margin-left: -20%; margin-bottom: 10%; visibility: {{ visibility }};"
+            src={{ output_path }} max />
+
+    </div>
+
+    <!-- BOOTSTRAP POPPER JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+    <!-- INDEX JS -->
+    <script src="../static/javascripts/index.js"></script>
+
+</body>
+
+</html>
